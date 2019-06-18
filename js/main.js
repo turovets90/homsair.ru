@@ -2,15 +2,13 @@ $(document).ready(function(){
 
 
 
-    $('.hamburger').on('click',function () {
+    $('.mm_btn').on('click',function () {
         $('.main_menu').toggleClass('open');
         $('html').toggleClass('page-noscroll');
-        $(this).toggleClass('act');
 
         $('.mm_close').on('click',function () {
             $('.main_menu').removeClass('open');
             $('html').removeClass('page-noscroll');
-            $('.hamburger').removeClass('act');
         });
         return false;
     });
@@ -20,19 +18,99 @@ $(document).ready(function(){
             if (!$(e.target).closest(".main_menu.open").length) {
                 $(".main_menu.open").removeClass('open');
                 $("html").removeClass('page-noscroll');
-                $('.hamburger').removeClass('act');
             }
             e.stopPropagation();
         });
     }
 
+
+
+    if($('.banners_slider > div').length >1){
+        $('.banners_slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:true,
+            //fade:true,
+            //infinite:false,
+           // autoplay: true,
+            //speed: 1000,
+            //autoplaySpeed:9000,
+        });
+    }
+
+
+
+    $('.tab-content .tab-pane').each(function(){
+        var tab_content_slider = $(this).find('.tab_content_slider');
+        var tab_content_slider_item = $(this).find('.tab_content_slider > div');
+        if(tab_content_slider_item.length > 4){
+            $(tab_content_slider).slick({
+                autoplay: false,
+                dots: false,
+                arrows: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        }else if($(window).innerWidth() < 575 && tab_content_slider_item.length > 1){
+            $(tab_content_slider).slick({
+                autoplay: false,
+                dots: false,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+        }else if($(window).innerWidth() < 767 && tab_content_slider_item.length > 2){
+            $(tab_content_slider).slick({
+                autoplay: false,
+                dots: false,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+        }else if($(window).innerWidth() < 991 && tab_content_slider_item.length > 3){
+            $(tab_content_slider).slick({
+                autoplay: false,
+                dots: false,
+                arrows: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            });
+        }
+
+    });
+
+
+
+    /*
     $('.main_menu .arrow').on('click',function () {
         $(this).toggleClass('rotate');
         $(this).next().slideToggle();
     });
 
+*/
 
-
+    /*
 
     if($('.main_slider .slider_item').length >1){
         $('.main_slider').slick({
@@ -359,7 +437,7 @@ $(document).ready(function(){
                 'top':header+'px'
             });
         }
-        /*$(window).scroll(function(){
+        $(window).scroll(function(){
             if ($(window).scrollTop() > header) {
                 $('header').addClass('fixed');
                 $('body').css({
@@ -371,11 +449,11 @@ $(document).ready(function(){
                     'padding-top':'0px'
                 });
             }
-        });*/
+        });
     });
     $(window).resize();
 
-    $("#order_call_form").validate();
+   */
 
 
 });
