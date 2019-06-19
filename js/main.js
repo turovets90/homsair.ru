@@ -24,6 +24,11 @@ $(document).ready(function(){
     }
 
 
+    $('.main_menu .arrow').on('click',function () {
+        $(this).toggleClass('rotate');
+        $(this).next().slideToggle();
+    });
+
 
     if($('.banners_slider > div').length >1){
         $('.banners_slider').slick({
@@ -103,10 +108,7 @@ $(document).ready(function(){
 
 
     /*
-    $('.main_menu .arrow').on('click',function () {
-        $(this).toggleClass('rotate');
-        $(this).next().slideToggle();
-    });
+
 
 */
 
