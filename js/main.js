@@ -143,6 +143,40 @@ $(document).ready(function(){
 
 
 
+    $('.product_slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        //fade: true,
+        asNavFor: '.product_slider_nav'
+    });
+
+    $('.product_slider_nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        asNavFor: '.product_slider',
+        //vertical:true,
+        focusOnSelect: true,
+        responsive: [
+
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow:2,
+                }
+            }
+        ]
+    });
+
+
+
     /*
 
 
