@@ -283,6 +283,9 @@ img, video{
             a{
               color: @black;
               text-decoration: none;
+              &:hover, &:focus{
+                color: @red;
+              }
             }
           }
         }
@@ -2458,7 +2461,7 @@ h3{
 }
 
 
-.checkout_form{
+.checkout_form, .modal_form{
 
   .field{
     margin-bottom: 20px;
@@ -2922,7 +2925,7 @@ h3{
 /***************************/
 
 
-.form-control{
+.form-control, button{
   &:focus{
     outline: none;
     box-shadow: none;
@@ -2933,5 +2936,74 @@ h3{
 .content_404{
   a{
     color: @red;
+  }
+}
+
+
+button.close{
+  opacity: 1;
+}
+
+
+.modal_title{
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
+.modal-body{
+  @media (min-width:576px){
+    padding: 30px;
+  }
+}
+
+
+.service_centres{
+  padding-top: 30px;
+}
+.service_centres_row{
+  margin-bottom: 30px;
+  .flex();
+  .wrap();
+
+  .col_map{
+    width: calc(100% - 300px);
+    @media (max-width:767px){
+      width: 100%;
+    }
+  }
+  .col_content{
+    background: #F2F2F2;
+    padding: 20px 20px;
+    .flex();
+    .ai-center();
+    height: 300px;
+    width: 290px;
+    margin-right: 10px;
+    @media (max-width:767px){
+      width: 100%;
+      margin-right: 0;
+      height: auto;
+      padding: 30px 20px;
+    }
+    p{
+      color: #484848;
+      font-size: 14px;    line-height: 1.5;    margin-bottom: 5px;
+    }
+    .title{
+      color: #484848;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    ul{
+      line-height: 1.5;
+      li{
+        a{
+          color: #484848;
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
