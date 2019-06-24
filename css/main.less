@@ -682,7 +682,7 @@ img, video{
           }
         }
       }
-      &.active{
+      &.active, &:hover{
       >  a{
           font-weight: bold;
         }
@@ -865,6 +865,12 @@ img, video{
     margin-bottom: 50px;
   }
 
+  @media (min-width:768px){
+    .transition(@transition_default);
+    &:hover{
+      .box-shadow(0 0 20px 0 rgba(0,0,0,0.14));
+    }
+  }
 
   .slick-slide{
     text-align: center;
