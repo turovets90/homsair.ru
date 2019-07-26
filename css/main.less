@@ -2432,6 +2432,10 @@ h3{
 
 .btn_default{
   .type_product .product_content .hide_content .add_to_cart;
+  &:hover, &:focus{
+    color: #fff;
+    text-decoration:none;
+  }
 }
 
 
@@ -3093,5 +3097,67 @@ button.close{
         text-decoration: none;
       }
     }
+  }
+}
+
+
+.cart_modal{
+  .close{
+    background: url(../img/close.png);
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+
+  .modal-content{
+    .border-radius(0);
+  }
+
+  .modal-body{
+    text-align: center;
+  }
+  .modal_title{
+    text-transform: initial;
+    color: @red;
+    font-weight: @500;
+    font-size: 24px;
+    text-align: left;    margin-bottom: 7px;
+    @media (max-width:575px){
+      font-size: 20px;
+      line-height: 1.5;
+      padding-right: 30px;
+    }
+  }
+  .sub_title{
+    text-align: left;    line-height: 1.5;
+    margin-bottom: 40px;
+    @media (max-width:575px){
+        margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width:576px){
+    .modal-dialog {
+      max-width: 570px;
+    }
+
+    .modal-body {
+      padding: 30px 85px;
+    }
+  }
+}
+
+
+.continue_shopping{
+  display: inline-block;
+  color: @red;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: underline;margin-top: 25px;margin-bottom: 18px;
+  &:hover, &:focus{
+    color: @black;
   }
 }
