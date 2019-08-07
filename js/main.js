@@ -107,7 +107,7 @@ $(document).ready(function(){
 
 
 
-    if($(".category_slider .item").length >7){
+    if($(".category_slider .item").length >= 7){
         $('.category_slider').slick({
             slidesToShow:7,
             slidesToScroll: 1,
